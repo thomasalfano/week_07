@@ -37,8 +37,17 @@ def create(circle: Circle):
     conn.commit()
     return circle
 
-def modify(circle: Circle):
-    return circle
+def modify(radius: float, circle: Circle):
+    qry = """UPDATE circle SET
+             radius=:radius
+             where radius=:orig_radius"""
+    params = model_to_dict(circle)
+    params["orig_radius"] = radius
+    curs.execute(qry, params)
+    if curs.rowcount == 1:
+        return get_one(circle.radius)
+    else:
+        return None
 
 def replace(circle: Circle):
     return circle
