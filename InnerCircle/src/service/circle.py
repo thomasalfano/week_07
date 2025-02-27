@@ -14,7 +14,7 @@ def create(circle: Circle) -> Circle:
 def replace(radius, circle: Circle) -> Circle:
     return data.replace(radius, circle)
 
-def modify(radius, circle: Circle) -> Circle:
+def modify(radius: float, circle: Circle) -> Circle:
     return data.modify(radius, circle)
 
 def delete(radius, circle: Circle) -> bool:
