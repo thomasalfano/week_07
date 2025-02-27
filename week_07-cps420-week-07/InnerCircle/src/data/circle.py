@@ -39,8 +39,8 @@ def create(circle: Circle):
 
 def modify(circle: Circle):
     return circle
-#seth's 
-def replace(radius, circle: Circle):
+#seth's did it 
+def replace(radius : float, circle: Circle):
     delete(Circle(radius))
     return create(circle)
 
